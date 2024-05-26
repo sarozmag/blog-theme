@@ -18,7 +18,7 @@ collections:
     - { label: "Featured Image", name: "featured-image", widget: "image" }
     - { label: "Body", name: "body", widget: "markdown" }
 
- - name: "banner"
+ - name: "banners"
    preview: false
    label: "Banner"
    folder: "content/banner"

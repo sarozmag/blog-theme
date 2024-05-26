@@ -9,6 +9,13 @@ const IndexPage = ({ data }) => (
   <Layout>
     <Container>
       <h1>Welcome to this site</h1>
+      <ul>
+        {data.fileInformation.edges.map(({ node }) => (
+          <li key={node.id}>
+            {node.base} | {node.prettySize}
+          </li>
+        ))}
+      </ul>
 
       <Row>
         {data.travelLocations.edges.map(({ node }) => (
