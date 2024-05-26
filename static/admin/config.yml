@@ -17,3 +17,15 @@ collections:
     - { label: "Travel Dates", name: "travel-dates", widget: "string" }
     - { label: "Featured Image", name: "featured-image", widget: "image" }
     - { label: "Body", name: "body", widget: "markdown" }
+
+ - name: "banner"
+   preview: false
+   label: "Banner"
+   folder: "content/banner"
+   create: true
+   slug: "{{slug}}"
+   fields:
+    - { label: "Sub Title", name: "location", widget: "string" }
+    - { label: "Title", name: "travel-dates", widget: "string" }
+    - { label: "Featured Image", name: "featured-image", widget: "image" }
+    - { label: "Body", name: "body", widget: "markdown" }
