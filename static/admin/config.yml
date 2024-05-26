@@ -19,9 +19,9 @@ collections:
     - { label: "Body", name: "body", widget: "markdown" }
 
  - name: "banners"
-   preview: false
+   preview: true
    label: "Banner"
-   folder: "content/banner"
+   folder: "content/banner/banner-content.md"
    create: true
    slug: "{{slug}}"
    fields:
