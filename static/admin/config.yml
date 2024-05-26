@@ -6,7 +6,7 @@ media_folder: static/images
 public_folder: ../../static/images/
 
 collections:
- - name: "travel-packages"
+ - name: "travel-prackages"
    preview: false
    label: "Travel Packages"
    folder: "Content/travel-packages"
