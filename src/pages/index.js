@@ -4,6 +4,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Container, Row, Col, Card, CardBody } from "react-bootstrap"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Banner from "../components/banner/banner"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -36,7 +37,21 @@ const IndexPage = ({ data }) => (
           </Col>
         ))}
       </Row>
+
+      {data.bannerLocation.edges.map(({ node }) => (
+        <li key={node}>
+          <GatsbyImage
+            image={getImage(node.frontmatter.featured_image)}
+            alt={node.frontmatter.location}
+            className="card-img-top"
+          />
+          <h2>{node.frontmatter.title}</h2>
+          <h2>{node.frontmatter.sub_title}</h2>
+          <h2>{node.frontmatter.paragraph}</h2>
+        </li>
+      ))}
     </Container>
+    <Banner />
   </Layout>
 )
 
@@ -70,6 +85,23 @@ export const query = graphql`
             featured_image {
               childImageSharp {
                 gatsbyImageData(aspectRatio: 1.5, width: 600)
+              }
+            }
+          }
+        }
+      }
+    }
+    bannerLocation: allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            sub_title
+            paragraph
+            featured_image {
+              childImageSharp {
+                gatsbyImageData(width: 600)
               }
             }
           }
